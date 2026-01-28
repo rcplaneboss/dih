@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DIH Accessories&Gadgets - Store Management</title>
+    <meta name="description" content="Professional retail management system for DIH Accessories&Gadgets store">
+    <meta name="keywords" content="retail, inventory, sales, accessories, gadgets, management, DIH">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="DIH Accessories&Gadgets - Store Management">
+    <meta property="og:description" content="Professional retail management system for DIH Accessories&Gadgets store">
+    
+    <!-- Twitter -->
+    <meta name="twitter:title" content="DIH Accessories&Gadgets - Store Management">
+    <meta name="twitter:description" content="Professional retail management system for DIH Accessories&Gadgets store">
+
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+
+    <!-- Predefined Tailwind CSS, use it as needed, or update base on your -->
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --primary-color: #1e40af;
+            --primary-dark: #1e3a8a;
+            --secondary-color: #f0f9ff;
+            --accent-color: #0ea5e9;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --success-color: #059669;
+            --sidebar-width: 280px;
+            --header-height: 72px;
+            --wave-gradient: linear-gradient(135deg, #1e40af 0%, #0ea5e9 50%, #06b6d4 100%);
+        }
+    }
+
+    @layer base {
+        body {
+            @apply bg-gray-50 text-gray-900 font-sans;
+        }
+        
+        * {
+            @apply box-border;
+        }
+    }
+
+    @layer components {
+        .btn-primary {
+            @apply bg-[var(--primary-color)] text-white px-4 py-2 rounded-lg font-medium hover:bg-[var(--primary-dark)] transition-colors;
+        }
+        
+        .btn-secondary {
+            @apply bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-300 transition-colors;
+        }
+        
+        .card {
+            @apply bg-white rounded-lg shadow-sm border border-[var(--border-color)] p-6;
+        }
+        
+        .input-field {
+            @apply w-full px-3 py-2 border border-[var(--border-color)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] focus:border-transparent;
+        }
+        
+        .sidebar-nav-item {
+            @apply flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-[var(--primary-color)] rounded-lg transition-colors cursor-pointer;
+        }
+        
+        .sidebar-nav-item.active {
+            @apply bg-blue-50 text-[var(--primary-color)] border-r-2 border-[var(--primary-color)];
+        }
+        
+        .status-badge {
+            @apply px-3 py-1 rounded-full text-xs font-medium;
+        }
+        
+        .status-low {
+            @apply bg-red-100 text-red-800;
+        }
+        
+        .status-medium {
+            @apply bg-yellow-100 text-yellow-800;
+        }
+        
+        .status-high {
+            @apply bg-green-100 text-green-800;
+        }
+        
+        .desktop-grid {
+            @apply grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6;
+        }
+        
+        .stats-grid {
+            @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6;
+        }
+    }
+
+    @layer utilities {
+        .text-shadow {
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+    }
+    </style>
+
+</head>
+<body>
+    <div id="root"></div>
+    
+    <!-- Components -->
+    <script type="text/babel" src="components/Header.js"></script>
+    <script type="text/babel" src="components/Sidebar.js"></script>
+    <script type="text/babel" src="components/Dashboard.js"></script>
+    <script type="text/babel" src="components/ProductCard.js"></script>
+    <script type="text/babel" src="components/SalesModal.js"></script>
+    <script type="text/babel" src="components/AddProductModal.js"></script>
+    <script type="text/babel" src="components/CategoryBrandModal.js"></script>
+    <script type="text/babel" src="components/DailySalesModal.js"></script>
+    <script type="text/babel" src="components/ExpenseModal.js"></script>
+    <script type="text/babel" src="components/ReceiptModal.js"></script>
+    
+    <!-- Utils -->
+    <script type="text/babel" src="utils/api.js"></script>
+    <script type="text/babel" src="utils/storage.js"></script>
+    <script type="text/babel" src="utils/calculations.js"></script>
+    
+    <!-- Main App -->
+    <script type="text/babel" src="app.js"></script>
+</body>
+</html>
