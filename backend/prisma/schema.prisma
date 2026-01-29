@@ -34,7 +34,7 @@ model Sale {
   productId     String
   productName   String
   brand         String
-  category      String
+  category      String?
   quantity      Int
   price         Float
   cost          Float    @default(0)
