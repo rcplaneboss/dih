@@ -263,7 +263,7 @@ app.post('/api/sales/bulk', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(3000);
+}
+module.exports = app;
